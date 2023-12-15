@@ -29,7 +29,7 @@
 				MpStorage.updatePref(url, pref);
 			}
 			lang = pref.substring(0, 2);
-			setTimeout(function () {
+			window.addEventListener('load', (event) => {
 				var script = document.createElement('SCRIPT');
 				var protocol = MP.Protocols[location.protocol];
 				if (url == oSite) {
@@ -58,7 +58,7 @@
 				}
 				var target = document.getElementsByTagName('script')[0];
 				target.parentNode.insertBefore(script, target);
-			}, 500);
+			});
 			return false;
 		},
 		switchToLang: function (url) {
